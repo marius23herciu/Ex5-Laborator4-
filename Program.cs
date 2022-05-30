@@ -12,19 +12,17 @@ namespace Ex5_Laborator4_
 
             Console.WriteLine("Introduceti un numar:");
             int numar = int.Parse(Console.ReadLine());
-            int i = 1; int suma=0;
-            AfisareSuma1N(i, numar,suma);
+
+            int rezultat = AfisareSuma1N(numar);
+            Console.WriteLine("Suma numereleor de la 1 la " + numar + " este " + rezultat);
         }
-        static int AfisareSuma1N(int i, int numar, int suma)
+        static int AfisareSuma1N( int numar)
         {
-            while (i>numar)
+            if (numar== 1)
             {
-                Console.WriteLine("Suma numereleor de la 1 la " + numar + " este " + suma);
-                return suma;
+                return numar;
             }
-            suma += i;
-            AfisareSuma1N(i + 1, numar, suma);
-            return suma;
+            return numar + AfisareSuma1N(numar - 1);
         }
     }
 }
